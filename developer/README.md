@@ -1,4 +1,4 @@
-本目录为开发包 1.0.1 的公开文档、SDK、模板及许可快照，不含 EXE；CLI 请下载下方 Release。`DEVKIT.json` 对应完整 ZIP 的元数据。
+本目录为开发包1.0.2的公开文档、SDK、模板、示例及许可快照，不含EXE；CLI请下载下方Release。
 
 # 颜喵小游戏开发工具包
 
@@ -6,7 +6,9 @@
 
 ## 开始开发
 
-1. 从 [开发工具发布页](https://github.com/xianyvqiu/yanmew-community-games/releases/tag/devkit-v1.0.1) 下载 ZIP 和同名 `.sha256`。在 PowerShell 运行 `Get-FileHash -Algorithm SHA256 <ZIP路径>`，与校验文件比对后解压。
+本包另有[喵币计算挑战完整示例](examples/wallet-challenge/README.md)，用于学习扣费、奖励和异常恢复；不要用自己的日常钱包测试。它不列入社区游戏目录。基础入门仍先使用不申请钱包权限的猜数字示例。
+
+1. 从 [开发工具发布页](https://github.com/xianyvqiu/yanmew-community-games/releases/tag/devkit-v1.0.2) 下载 ZIP 和同名 `.sha256`。在 PowerShell 运行 `Get-FileHash -Algorithm SHA256 <ZIP路径>`，与校验文件比对后解压。
 2. 阅读 [从零编写小游戏及完整接口教程](sdk/README.md)。`sdk/index.d.ts` 是完整接口类型，三个 JSON Schema 可用于编辑器提示。
 3. 复制 `template/` 到自己的开发目录，修改 manifest 中的 ID、名称、作者及版本，编写 `ui/` 下的 HTML、CSS、JavaScript。模板只演示连接和存档，不会被收录为社区作品。
 4. 用下方命令打包，再在颜喵“全局设置 → 小游戏插件 → 从本地安装”中安装测试。
