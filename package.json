@@ -3,12 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test validation/*.test.mjs",
+    "test": "node --test \"validation/*.test.mjs\"",
     "validate": "node validation/check.mjs",
     "pack": "node build/pack.mjs",
     "toolchain": "node build/get-tool.mjs",
     "smoke": "node build/smoke.mjs",
-    "test:publish": "node --test integration/*.test.mjs"
+    "test:publish": "node --test \"integration/*.test.mjs\"",
+    "check:local": "node build/check-local.mjs",
+    "release:local": "node build/local-release.mjs"
   },
   "engines": {
     "node": ">=22"

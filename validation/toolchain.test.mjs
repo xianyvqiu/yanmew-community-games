@@ -15,7 +15,7 @@ test('下载须同时满足大小和 SHA-256，拒绝错误状态、截断和被
   for (const value of ['zi','zipp','bad']) await assert.rejects(downloadArchive(lock(),async()=>new Response(value)));
   await assert.rejects(downloadArchive(lock(),async()=>new Response('missing',{status:404})));
 });
-test('开发工具 tag 不触发游戏发布；游戏 tag 拒绝非法 ID 和版本', () => {
+test('开发工具 tag 不能用作游戏版本；拒绝非法 ID 和版本', () => {
   assert.deepEqual(parseTag('org.example.blocks/v1.2.0'),{id:'org.example.blocks',version:'1.2.0'});
   for (const tag of ['devkit-v1.0.0','com.yanmew.game.blocks/v1.0.0','org.example.blocks/v01.0.0',undefined]) assert.throws(()=>parseTag(tag));
 });

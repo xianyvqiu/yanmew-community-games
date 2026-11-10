@@ -2,7 +2,7 @@
 
 ## 准备
 
-使用 [公开开发工具包](https://github.com/xianyvqiu/yanmew-community-games/releases/tag/devkit-v1.0.0) 与 [完整 SDK 教程](developer/sdk/README.md) 开发，宿主协议为 `1.0.0`。向 `games/<plugin-id>/` 提交源码，一个 PR 只新增或更新一个游戏。ID 使用稳定的小写反向域名格式，不占用第一方的 `com.yanmew.game.*`；发布后不换 ID。
+使用 [公开开发工具包](https://github.com/xianyvqiu/yanmew-community-games/releases/tag/devkit-v1.0.1) 与 [完整 SDK 教程](developer/sdk/README.md) 开发，宿主协议为 `1.0.0`。向 `games/<plugin-id>/` 提交源码，一个 PR 只新增或更新一个游戏。ID 使用稳定的小写反向域名格式，不占用第一方的 `com.yanmew.game.*`；发布后不换 ID。
 
 manifest 与宿主保持同一协议，必须填写实际源码所在的 GitHub 仓库 `repository`。分发入口必须是 `ui/` 下的 HTML。运行资源放在 `ui/`、`assets/`、`locales/`，图标用根目录 `icon.svg` 或 `icon.png`，迁移脚本由 manifest 的 `migration` 指明。包内路径遵守宿主的 ASCII 安全相对路径规则。
 
@@ -18,9 +18,11 @@ manifest 与宿主保持同一协议，必须填写实际源码所在的 GitHub 
 
 ## 检查和审阅
 
-提交前运行 `npm test`、`npm run validate`，运行 `npm run toolchain` 取得锁定工具，将打印的 CLI 路径设为 `YANMEW_PLUGIN_CLI`，再执行 `npm run pack -- <plugin-id>`。自动检查只验证目录、元数据及包结构，不运行游戏。维护者还须人工验证实际游玩、不同窗口尺寸、键鼠操作、关闭重开、权限拒绝、网络失败、喵币不足及存档升级。
+提交前在社区仓库根目录运行 `npm run check:local`。命令运行本地规则测试、目录检查、固定开发包下载/哈希核验及真实打包；不需要 GitHub Actions 或第三方 npm 依赖。命令成功不代表玩法已通过，维护者仍须人工验证实际游玩、不同窗口尺寸、键鼠、关闭重开、权限拒绝、网络失败、喵币不足及存档升级。
 
-非维护者不要直接修改 `catalog.json`、发布工作流或仓库工具来通过某个游戏的检查。如需调整公共规则，另开 Issue 讨论。合入源码后由维护者发布，不能在 manifest 自报“官方”或“审核通过”。
+先审阅文件差异，再执行本地工具；游戏 PR 只修改对应游戏目录，工具改动另行审查。PR 中填写本地命令、颜喵版本、测试结果和未测项。仓库不自动运行 Actions，因此没有自动绿勾不表示免于检查。合入 main 后，维护者执行 `npm run release:local -- <plugin-id>` 发布；完整步骤与失败处理见[维护者本地发布](README.md#维护者本地发布)。
+
+非维护者不要直接修改 `catalog.json`、发布工具或仓库工具来通过某个游戏的检查。如需调整公共规则，另开 Issue 讨论。合入源码后由维护者发布，不能在 manifest 自报“官方”或“审核通过”。
 
 ## 更新与问题反馈
 

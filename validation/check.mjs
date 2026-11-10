@@ -40,8 +40,4 @@ export async function check(root = process.cwd()) {
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const ids = await check(); console.log(`目录校验通过，源码小游戏 ${ids.length} 个`);
-  if (process.env.GITHUB_OUTPUT) {
-    const {appendFile} = await import('node:fs/promises');
-    await appendFile(process.env.GITHUB_OUTPUT, `has_games=${ids.length > 0}\n`);
-  }
 }

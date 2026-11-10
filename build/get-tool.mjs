@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {readFile, writeFile, mkdir, mkdtemp, rm, rename, appendFile} from 'node:fs/promises';
+import {readFile, writeFile, mkdir, mkdtemp, rm, rename} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {resolve, join, relative, isAbsolute, sep} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
@@ -72,5 +72,4 @@ export async function getTool(root = process.cwd()) {
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const cli = await getTool();
   console.log(`校验完成：${cli}`);
-  if (process.env.GITHUB_OUTPUT) await appendFile(process.env.GITHUB_OUTPUT, `cli=${cli}\n`);
 }

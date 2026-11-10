@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiVersion": "1.0.0",
   "platform": "windows-x64",
-  "url": "https://github.com/xianyvqiu/yanmew-community-games/releases/download/devkit-v1.0.0/yanmew-plugin-devkit-1.0.0-windows-x64.zip",
-  "directory": "yanmew-plugin-devkit-1.0.0-windows-x64",
+  "url": "https://github.com/xianyvqiu/yanmew-community-games/releases/download/devkit-v1.0.1/yanmew-plugin-devkit-1.0.1-windows-x64.zip",
+  "directory": "yanmew-plugin-devkit-1.0.1-windows-x64",
   "cli": "bin/yanmew-plugin.exe",
   "cliSha256": "f07706c9896faec9c3ce349e04c0a8f7b5ba00c5bec76553f1199506dfb35057",
-  "sizeBytes": 2846978,
-  "sha256": "fc29b46c39cb6bfb10f8bbe0b519f616862da055bca3fc3e11be1df83642c0c7"
+  "sizeBytes": 2847656,
+  "sha256": "0e00ac8e4a8fb8755d92ec4beb5bcac22ba820232d95f5d7eb3a04fa5ae13c72"
 }
