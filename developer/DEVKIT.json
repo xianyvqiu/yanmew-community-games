@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "apiVersion": "1.0.0",
+  "platform": "windows-x64",
+  "minimumWindows": "10",
+  "cli": "bin/yanmew-plugin.exe",
+  "cliSha256": "f07706c9896faec9c3ce349e04c0a8f7b5ba00c5bec76553f1199506dfb35057",
+  "sourceCommit": "9cd34a6d0f3e8e1c83dc2cc2451d66c259760522",
+  "sourceFiles": {
+    "src-tauri/src/bin/yanmew-plugin.rs": "66aafa21a7b46b445eab6d09304bc82d528da09f6b2396cb5e864b455beebf34",
+    "src-tauri/src/game_plugins/manifest.rs": "c09ba600a78a660f32d4324a0ec28bb5b582cc672f8564b5c5f4d51603a95074",
+    "src-tauri/src/game_plugins/package.rs": "527cd0260a7ae6ddb4b7b16880e3cdd13ae643cbae8b69444cd2c54d8100663f",
+    "src-tauri/Cargo.lock": "8f4689c3cc5414dfd5e9730262f5c86fab0d1e7daf4a910b0f2ca761fd844b45"
+  },
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)"
+}

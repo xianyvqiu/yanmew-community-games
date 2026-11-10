@@ -1,0 +1,12 @@
+out/
+.test-temp/
+toolchain/
+node_modules/
+.env
+.env.*
+*.yanmew-game
+*.log
+Thumbs.db
+.DS_Store
+
+.toolchain/
